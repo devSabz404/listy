@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+{% block title %}Post Ad{% endblock %}
+
+{% block content %}
+ <form  method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_table}}
+
+    <button type="submit" class="btn btn-lg btn-success">Post</button>
+    </form>
+
+     {% if obj %}
+    <h3> Confirm right information: {{img_obj.title}}</h3>
+    <img src="{{ obj.image.url }}" alt="image" class="img-thumbnail" width="50%" height="50%">
+    {% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="card mb-3">
+  <ul>
+  {% for x in catd %}
+  <li> {{x.advert.title}}</li>
+  {% endfor %}
+  </ul>
+  </div>
+  
+  
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+  <div class="container px-4 py-5" id="custom-cards">
+   
+       {% for x in cat %}
+        {% if forloop.first %}
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    {% endif %}
+      <div class="col">
+      <a href="{{ x.get_absolute_url }}" style="text-decoration:none;">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('{{ x.image.url }}'); background-size: 382px 280px;background-repeat: no-repeat;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 ">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2>
+            <div class"mb-5" style="height:40%; width:100%; background-color:black; border-radius:15px; border:solid 2px yellow">
+            <ul class="d-flex list-unstyled mt-auto">
+            <div style=" display:flex;flex-direction:column";>
+             
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                <small><i class="fa fa-map-marker" aria-hidden="true"></i> : {{x.name}}</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                <small><i class="fa fa-shopping-basket" aria-hidden="true"></i> :{{ x.get_advert_set.count }}</small>
+              </li> 
+              
+            </div>
+            </ul>
+            </div>
+          </div>
+        </div>
+     </a>
+      </div>
+         {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row mt-3">{% endif %} 
+    {% if forloop.last %}</div>{% endif %}
+
+    {% endfor %}
+  
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card mb-3">
+  <img src="{{advert.image.url}}" class="card-img-top w-50 p-3" alt="..." >
+  <div class="card-body">
+    <h3 class="card-title">{{ advert.title }}</h3>
+     <h4 class="card-text"> {{ advert.location }}</h4>
+    <p class="card-text"> {{ advert.description }}</p>
+    <p class="card-text"><small class="text-muted">Mwk {{ advert.price|floatformat:2 }}</small></p>
+  </div>
+  
+  
+
+{% endblock %}
