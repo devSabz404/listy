@@ -5,41 +5,110 @@
 
   <div class="container px-4 py-5" id="custom-cards">
    
-       {% for x in cat %}
-        {% if forloop.first %}
-    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-    {% endif %}
-      <div class="col">
-      <a href="{{ x.get_absolute_url }}" style="text-decoration:none;">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('{{ x.image.url }}'); background-size: 382px 280px;background-repeat: no-repeat;">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 ">
-            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2>
-            <div class"mb-5" style="height:40%; width:100%; background-color:black; border-radius:15px; border:solid 2px yellow">
-            <ul class="d-flex list-unstyled mt-auto">
-            <div style=" display:flex;flex-direction:column";>
-             
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                <small><i class="fa fa-map-marker" aria-hidden="true"></i> : {{x.name}}</small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small><i class="fa fa-shopping-basket" aria-hidden="true"></i> :{{ x.get_advert_set.count }}</small>
-              </li> 
-              
-            </div>
-            </ul>
-            </div>
-          </div>
-        </div>
-     </a>
-      </div>
-         {% if forloop.counter|divisibleby:3 %}
-    </div>
-    <div class="row mt-3">{% endif %} 
-    {% if forloop.last %}</div>{% endif %}
+      
+    
 
-    {% endfor %}
+    <ul class="list-group">
+
+ {% for x in cat %}
+ <a href="{% url "cat_detail" pk=x.id %}" style="text-decoration:none;">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    {{x.name}}
+    
+  </li>
+  <span class="badge badge-primary badge-pill">14</span>
+  </a>
+  
+ 
+</ul>
+
+{% endfor %}
+
+<div class="container pb-5 mb-sm-2">
+    <!-- Categories grid-->
+    <div class="row no-gutters">
+        <!-- Category-->
+        <div class="col-lg-3 col-sm-4 col-6 category-card border border-collapse">
+            <div class="card border-0">
+                <a class="d-block" href="#"><img class="d-block" src="https://via.placeholder.com/340x232/FF8C00/000000" alt="Computers &amp; Accessories"></a>
+                <div class="card-body pb-2">
+                    <h2 class="h6 mb-2">Computers &amp; Accessories</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$149.80</span></span>
+                    <div class="list-group list-group-flush font-size-sm"><a class="list-group-item list-group-item-action" href="#">Laptops &amp; Tablets<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Desktop Computers<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Computer Accessories<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Computer Components<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Networking Products<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Category-->
+        <div class="col-lg-3 col-sm-4 col-6 category-card border border-collapse">
+            <div class="card border-0">
+                <a class="d-block" href="#"><img class="d-block" src="https://via.placeholder.com/340x232/7B68EE/000000" alt="TV, Video &amp; Audio"></a>
+                <div class="card-body pb-2">
+                    <h2 class="h6 mb-2">TV, Video &amp; Audio</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$78.00</span></span>
+                    <div class="list-group list-group-flush font-size-sm"><a class="list-group-item list-group-item-action" href="#">Smart TV Sets<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Blue-Ray Players<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Sound Systems<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Home Theaters<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Category-->
+        <div class="col-lg-3 col-sm-4 col-6 category-card border border-collapse">
+            <div class="card border-0">
+                <a class="d-block" href="#"><img class="d-block" src="https://via.placeholder.com/340x232/FA8072/000000" alt="Smartphones &amp; Tablets"></a>
+                <div class="card-body pb-2">
+                    <h2 class="h6 mb-2">Smartphones &amp; Tablets</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$127.00</span></span>
+                    <div class="list-group list-group-flush font-size-sm"><a class="list-group-item list-group-item-action" href="#">Apple iPhones<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Android Smartphones<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Apple iPads<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Android Tablets<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Phablets<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Category-->
+        <div class="col-lg-3 col-sm-4 col-6 category-card border border-collapse">
+            <div class="card border-0">
+                <a class="d-block" href="#"><img class="d-block" src="https://via.placeholder.com/340x232/87CEFA/000000" alt="Cameras, Photo &amp; Videos"></a>
+                <div class="card-body pb-2">
+                    <h2 class="h6 mb-2">Cameras, Photo &amp; Video</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$210.00</span></span>
+                    <div class="list-group list-group-flush font-size-sm"><a class="list-group-item list-group-item-action" href="#">Photo Cameras<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Video Cameras<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Action Cameras<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Tripods &amp; Stands<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Lenses<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Category-->
+        <div class="col-lg-3 col-sm-4 col-6 category-card border border-collapse">
+            <div class="card border-0">
+                <a class="d-block" href="#"><img class="d-block" src="https://via.placeholder.com/340x232/20B2AA/000000" alt="Headphones"></a>
+                <div class="card-body pb-2">
+                    <h2 class="h6 mb-2">Headphones</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$35.99</span></span>
+                    <div class="list-group list-group-flush font-size-sm"><a class="list-group-item list-group-item-action" href="#">Earbud Headphones<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Over-Ear Headphones<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Bluetooth Headphones<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Sports &amp; Fitness Headphones<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Noise-Cancelling Headphones<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Category-->
+        <div class="col-lg-3 col-sm-4 col-6 category-card border border-collapse">
+            <div class="card border-0">
+                <a class="d-block" href="#"><img class="d-block" src="https://via.placeholder.com/340x232/FF69B4/000000" alt="Wearable Electronics"></a>
+                <div class="card-body pb-2">
+                    <h2 class="h6 mb-2">Wearable Electronics</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$79.50</span></span>
+                    <div class="list-group list-group-flush font-size-sm"><a class="list-group-item list-group-item-action" href="#">Smart Watches<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Fitness Trackers<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Smart Glasses<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Category-->
+        <div class="col-lg-3 col-sm-4 col-6 category-card border border-collapse">
+            <div class="card border-0">
+                <a class="d-block" href="#"><img class="d-block" src="https://via.placeholder.com/340x232/FF8C00/000000" alt="Printers &amp; Ink"></a>
+                <div class="card-body pb-2">
+                    <h2 class="h6 mb-2">Printers &amp; Ink</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$54.00</span></span>
+                    <div class="list-group list-group-flush font-size-sm"><a class="list-group-item list-group-item-action" href="#">All-In-One<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Copying<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Faxing<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Photo Printing<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Printing Only<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Scanning<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Category-->
+        <div class="col-lg-3 col-sm-4 col-6 category-card border border-collapse">
+            <div class="card border-0">
+                <a class="d-block" href="#"><img class="d-block" src="https://via.placeholder.com/340x232/9932CC/000000" alt="Video Games"></a>
+                <div class="card-body pb-2">
+                    <h2 class="h6 mb-2">Video Games</h2><span class="d-block mb-3 font-size-xs text-muted">Starting from <span class="font-weight-semibold">$19.00</span></span>
+                    <div class="list-group list-group-flush font-size-sm"><a class="list-group-item list-group-item-action" href="#">PlayStation 4<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Xbox One<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Nintendo Switch<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Video Games<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a><a class="list-group-item list-group-item-action" href="#">Accessories<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right ml-1" style="width: .875rem; height: .875rem;"><polyline points="9 18 15 12 9 6"></polyline></svg></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
   
 
 {% endblock %}

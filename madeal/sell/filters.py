@@ -4,6 +4,8 @@ from .models import Advert, Category, Location
 
 class AdsFilter(django_filters.FilterSet):
 
+    
+
     class Meta:
         model =Advert
         fields={
@@ -15,6 +17,7 @@ class AdsFilter(django_filters.FilterSet):
             
             
             }
+
 
 
 # class LocFilter(django_filters.FilterSet):

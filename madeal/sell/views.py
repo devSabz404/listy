@@ -1,3 +1,4 @@
+from django.core import paginator
 from django.db.models.lookups import PostgresOperatorLookup
 from django.shortcuts import render,get_object_or_404
 from .forms import AdvertForm, LocationForm
@@ -8,13 +9,12 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .filters import AdsFilter
+from . import filters
+
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
-def AdvertView(request):
 
-    img = Advert.objects.all()
-   
-    return render(request,"sell/advert_list.html",{"img":img})
 
 
 @login_required
@@ -33,6 +33,11 @@ def AdvertPost(request):
 class AdvertDetailView(generic.DetailView):
     model = Advert
 
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['filter'] = Advert.objects.filter(self.kwargs.get('pk'))
+    #     return context
+
 
 class ProfileDetailView(generic.DetailView):
     model = Profile
@@ -48,13 +53,38 @@ class AdvertListView(generic.ListView):
     #queryset = Advert.objects.all().order_by("-created")
     template_name = 'sell/advert_list.html'
     ordering = ['-created']
-    paginate_by = 9
+    paginate_by=3
+    
 
     def get_context_data(self, **kwargs):
         context= super().get_context_data(**kwargs)
         context['filter']=AdsFilter(self.request.GET, self.get_queryset())
         return context
-    
+
+
+def advert_list(request):
+
+
+    queryset = Advert.objects.all().order_by('-created')
+    filtered_qs = AdsFilter(request.GET, queryset)
+    filtered_qs_form = filtered_qs.form
+
+    filtered_qs = filtered_qs.qs
+    paginator = Paginator(filtered_qs, 9)
+
+    page = request.GET.get('page')
+    try:
+        response = paginator.page(page)
+    except PageNotAnInteger:
+        response = paginator.page(1)
+    except EmptyPage:
+        response = paginator.page(paginator.num_pages)
+
+    return render(request, 'sell/vert_list.html', {'filter': response, 'filtered_qs_form': filtered_qs_form})
+
+# def advert_list(request):
+#     adverts=Advert.objects.get.all()  
+#     paginator=Paginator(adverts,3)
   
 
 class CategoryListView(generic.ListView):
@@ -68,14 +98,16 @@ class CategoryListView(generic.ListView):
 #     template_name="sell/category_detail.html"
 #     context_object_name="catd"
 
-def CategoryDetailView(request, id):
+class AdvertcatListView(generic.ListView):
+    model = Category
+    template_name = "sell/category_detail.html"
+    context_object_name = "catd"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = Advert.objects.filter(category=self.kwargs.get('pk'))
+        return context
 
-    cat = get_object_or_404(Category, id=id)
-    context = {
-        "category": cat.advert.all()
-    }
-    return render(request, 'sell/category_detail.html', context)
         
 
 

@@ -1,0 +1,349 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+
+{% block content%}
+   
+    <div class="container">
+    {% if messages %}
+ 
+        {% for msg in messages %}
+ 
+        <div class="alert alert-{{msg.level_tag}} " role="alert">
+ 
+            {{msg.message}}
+        </div>
+ 
+        {% endfor %}
+ 
+    {% endif %}
+    <style>
+    #form_id{
+        
+        
+    }
+    #id_title__icontains{
+      
+      
+  padding: 8px;
+  margin: 0 4px 0 0;
+  border: 1px solid #666;
+  border-radius: 5px;
+  height: 40px;
+  width:560px;
+    }
+#id_category{
+      
+        
+  padding: 8px;
+  margin: 0 4px 0 0;
+  border: 1px solid #666;
+  border-radius: 5px;
+  height: 40px;
+   width:560px;
+    }
+#id_location{
+      
+      
+  padding: 8px;
+  margin: 0 4px 0 0;
+  border: 1px solid #666;
+  border-radius: 4px;
+  height: 40px;
+   width:560px;
+    }
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+}
+#glass {
+  padding:10px;
+  width: 1150px;
+  height: 4rem;
+  box-shadow: 0 0 1rem 0 rgba(10, 10, 0, .2); 
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+  
+  overflow: hidden;
+}
+#heroin,.card{
+background: #ECE9E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+}
+#imgs {
+  border-radius: 2%;
+  padding-bottom:9px;
+  opacity:0.5;
+}
+</style>
+
+
+  <div >
+    <div class="p-5 mb-4 bg-light rounded-3" id="heroin">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Buy and Sell Anything On Malawi's Biggest Online Market</h1>
+        <div class="container">
+    <div class="row height d-flex justify-content-center align-items-center">
+   
+      <img id="imgs" src="{% static 'sell/images/banner1.jpg' %}"  width="300" height="200"  >
+    </div>
+    
+    <form  method="GET" action="{% url 'home' %}" id="form_id">
+        <div class="col-md-8">
+          <div id="glass">
+        <div class="wrapper">
+      
+        {{ filtered_qs_form}}
+      
+        {{ location.form}}
+          <button3 id="button3"type="submit" class="btn btn-primary">Search</button3>
+         </div> 
+        </div>
+        </div>
+      </form>
+    </div>
+</div>
+</div>
+        <p class="col-md-8 fs-4">.</p>
+    
+      </div>
+    </div>
+
+    <!--Category--> <div>
+  <h1>Popular categories</h3>
+ 
+ 
+  </div>
+
+
+    <div class="row mr-5">
+  <div class="col-sm-6 col-lg-4" >
+  <a href="{% url "cat_detail" pk=1 %}">
+    <div class="card" style="max-width: 18rem;" >
+      <div class="card-header bg-behance content-center">
+     <i class="cil-mobile "></i>
+      </div>
+      <div class="card-body row text-center">
+      <h3>Phones & Tablets</h3>
+        
+        <div class="vr"></div>
+        <div class="col">
+          <div class="text-value-xl">459</div>
+          <div class="text-uppercase text-muted small">Items</div>
+        </div>
+      </div>
+    </div>
+    </a>
+  </div>
+  <div class="col-sm-6 col-lg-4">
+    <div class="card" style="max-width: 18rem;">
+      <div class="card-header bg-dribbble content-center">
+       <i class="cil-camera"></i>
+      </div>
+      <div class="card-body row text-center">
+        <h3>Electronics</h3>
+       
+        <div class="vr"></div>
+        <div class="col">
+          <div class="text-value-xl">459</div>
+          <div class="text-uppercase text-muted small">Items</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-4">
+    <div class="card" style="max-width: 18rem;">
+      <div class="card-header bg-facebook content-center">
+      <i class="cil-laptop"></i>
+      </div>
+      <div class="card-body row text-center">
+        <h3>Computers </h3>
+        
+        <div class="vr"></div>
+        <div class="col">
+          <div class="text-value-xl">459</div>
+          <div class="text-uppercase text-muted small">Items</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-4">
+    <div class="card" style="max-width: 18rem;">
+      <div class="card-header bg-flickr content-center">
+       <i class="cil-garage"></i>
+      </div>
+      <div class="card-body row text-center">
+        <h3>Vehicles</h3>
+        
+        <div class="vr"></div>
+        <div class="col">
+          <div class="text-value-xl">459</div>
+          <div class="text-uppercase text-muted small">Items</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-4">
+    <div class="card" style="max-width: 18rem;">
+      <div class="card-header bg-github content-center">
+        <i class="cil-sofa"></i>
+      </div>
+      <div class="card-body row text-center">
+        <h3>Furniture</h3>
+       
+        <div class="vr"></div>
+        <div class="col">
+          <div class="text-value-xl">459</div>
+          <div class="text-uppercase text-muted small">Items</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-4">
+    <div class="card" style="max-width: 18rem;">
+      <div class="card-header bg-instagram content-center">
+      <i class="cil-home"></i>
+      </div>
+      <div class="card-body row text-center">
+        <h3>Real Estate & Land</h3>
+      
+        <div class="vr"></div>
+        <div class="col">
+          <div class="text-value-xl">459</div>
+          <div class="text-uppercase text-muted small">Items</div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+ 
+ 
+
+ 
+  
+
+  </div>
+   <a href="{% url "category" %}"><button type="button" class="btn btn-warning mt-5"> more categories</button></a>
+  
+
+  
+ 
+  </div></div>
+  
+
+    <!--end category-->
+{% comment %} 
+    <div class="p-5 mt-5 mb-4 bg-light rounded-3">
+    <div class="h-100  bg-light border rounded-3">
+          <h2>Recently Added</h2>
+         
+        </div>
+    
+    {% for x in img %}
+    {% if forloop.first %}<div class="row">{% endif %}
+    
+    <div class="col-lg-4 col-md-4 col-12">
+    <div class="text-center mt-2"><a href="{{ x.get_absolute_url }}">
+        <div class="h-100  bg-light border rounded-3">
+        <img src="{{ x.image.url }}" height="30%" width="30%" class="img-thumbnail rounded" alt="...">
+    
+        <h5 class="text-center">{{x.title}}</h5>
+         <h5 class="text-center">Mwk {{x.price|floatformat:2 }}</h5>
+        
+         </a>
+          </div>
+        </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">{% endif %} 
+    {% if forloop.last %}</div>{% endif %}
+
+    {% endfor %}
+   
+  </div>
+  </div> {% endcomment %}
+ 
+  
+
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Recently Added</h2>
+  </div>
+  <div class="container p-4">
+      <div class="row">
+        {% for m in filter %}
+        
+        <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+        <a href="{% url "advert_detail" pk=m.id %}"  style="text-decoration:none;">
+          <div class="card h-100 p-2">
+            <img src="{{ m.image.url }}" class="card-img-top" alt="{{ m.title}}" style="width: auto; height: 350px; object-fit: contain;">
+            <br>
+            <h4>{{m.title}}</h4>
+            <p class="text-muted"><strong>MWk {{m.price}} </strong> | {{m.location}}</p>
+            <p></p>
+          </div>
+           </a>
+        </div>
+       
+        {% endfor %}
+      </div>
+    </div>
+       {% comment %} {% for x in filter.qs %}
+        {% if forloop.first %}
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    {% endif %}
+      <div class="col">
+      <a href="{{ x.get_absolute_url }}" style="text-decoration:none;">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('{{ x.image.url }}'); background-size: 382px 280px;background-repeat: no-repeat;">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 ">
+            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h2>
+            <div class"mb-5" style="height:40%; width:100%; background-color:black; border-radius:15px; border:solid 2px yellow">
+            <ul class="d-flex list-unstyled mt-auto">
+            <div style=" display:flex;flex-direction:column";>
+             
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+                <small><i class="fa fa-map-marker" aria-hidden="true"></i> : {{x.location}}</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                <small><i class="fa fa-shopping-basket" aria-hidden="true"></i> :{{x.title}}</small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+                <small><i class="fa fa-money" aria-hidden="true"></i> :  MWk {{x.price}}</small>
+              </li>
+            </div>
+            </ul>
+            </div>
+          </div>
+        </div>
+     </a>
+      </div>
+     {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+   
+    {% if forloop.last %}</div>{% endif %}
+
+    {% endfor %}
+
+     
+
+      
+      </div>
+    </div>
+  </div> {% endcomment %}
+ 
+  
+  {% endblock %}
+  
+

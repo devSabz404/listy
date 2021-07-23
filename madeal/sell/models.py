@@ -25,7 +25,31 @@ class Location(models.Model):
         ordering = ('name',)
         verbose_name = 'location'
 
-  
+
+class Category(models.Model):
+
+    name = models.CharField(max_length=60,
+                            db_index=True)
+    slug = models.SlugField(max_length=60,
+                            unique=True)
+
+
+    def get_advert(self):
+        return "\n".join([p.advert for p in self.advert.all()])
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+
+        ordering = ('name',)
+        verbose_name = 'category'
+
+
+def get_absolute_url(self):
+    """Returns the url to access a detail record for this book."""
+    return reverse('cat_detail', args=[str(self.id)])
+
 
         
 
@@ -52,13 +76,13 @@ class Advert(models.Model):
     image=models.ImageField(upload_to="img/%y")
     condition=models.CharField(max_length=10,choices=CONDITION)
     description=models.TextField(max_length=300)
-    price=models.FloatField()
+    price=models.DecimalField(decimal_places=2,max_digits=19)
     created = models.DateTimeField(auto_now_add=True)
     available = models.BooleanField(default=True)
 
     def get_absolute_url(self):
         """Returns the url to access a detail record for this book."""
-        return reverse('advert-detail', args=[str(self.id)])
+        return reverse('advert_detail', args=[str(self.id)])
 
 class Profile(models.Model):
 
@@ -73,26 +97,3 @@ class Profile(models.Model):
         # return reverse('profile', kwargs={'pk': self.pk})
 
 
-class Category(models.Model):
-
-    name = models.CharField(max_length=60,
-                            db_index=True)
-    slug = models.SlugField(max_length=60,
-                            unique=True)
-    advert = models.ManyToManyField(Advert,related_name='adverts')
-
-    def get_advert(self):
-        return "\n".join([p.advert for p in self.advert.all()])
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-
-        ordering = ('name',)
-        verbose_name = 'category'
-
-
-def get_absolute_url(self):
-    """Returns the url to access a detail record for this book."""
-    return reverse('category-detail', args=[str(self.id)])

@@ -1,13 +1,37 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<div class="card mb-3">
+{% comment %} <div class="card mb-3">
   <ul>
-  {% for x in catd %}
-  <li> {{x.advert.title}}</li>
+  {% for x in filter %}
+  <a href="{{ x.get_absolute_url }}" style="text-decoration:none;"><li> {{x.title}}</li></a>
   {% endfor %}
   </ul>
-  </div>
+  </div> {% endcomment %}
+
+
+
+  <div class="container p-4">
+      <div class="row">
+        {% for x in filter %}
+        
+        <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+        <a href="{{ x.get_absolute_url }}"  style="text-decoration:none;">
+          <div class="card h-100 p-4">
+            <img src="{{ x.image.url }}" class="card-img-top" alt="{{ x.title}}" style="width: auto; height: 350px; object-fit: contain;">
+            <br>
+            <h4>{{m.title}}</h4>
+            <p class="text-muted">MWk {{x.price}} | {{x.location}}</p>
+            <p></p>
+          </div>
+           </a>
+        </div>
+       
+        {% endfor %}
+      </div>
+    </div>
+
+    
   
   
 
