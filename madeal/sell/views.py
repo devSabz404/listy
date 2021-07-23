@@ -27,11 +27,12 @@ def AdvertPost(request):
 
     else:
         form = AdvertForm()
-    return render(request, "sell/upload.html", {"form": form})
+    return render(request, "sell/post-ad.html", {"form": form})
 
 
 class AdvertDetailView(generic.DetailView):
     model = Advert
+    template_name='sell/product-details.html'
 
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
@@ -80,7 +81,7 @@ def advert_list(request):
     except EmptyPage:
         response = paginator.page(paginator.num_pages)
 
-    return render(request, 'sell/vert_list.html', {'filter': response, 'filtered_qs_form': filtered_qs_form})
+    return render(request, 'sell/index.html', {'filter': response, 'filtered_qs_form': filtered_qs_form})
 
 # def advert_list(request):
 #     adverts=Advert.objects.get.all()  
@@ -89,7 +90,7 @@ def advert_list(request):
 
 class CategoryListView(generic.ListView):
     model = Category
-    template_name="sell/category_view.html"
+    template_name="sell/category-list.html"
     context_object_name='cat'
 
 

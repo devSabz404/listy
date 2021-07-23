@@ -3,20 +3,13 @@ import django_filters
 from .models import Advert, Category, Location
 
 class AdsFilter(django_filters.FilterSet):
-
-    
-
     class Meta:
         model =Advert
         fields={
             'title':['icontains'],
             'category': ['exact'],
             'location': ['exact'],
-           
-            
-            
-            
-            }
+           }
 
 
 

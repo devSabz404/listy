@@ -1,0 +1,548 @@
+ {% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+
+
+<section class="banner-area bg_cover">
+<div class="container">
+<div class="row">
+<div class="col-lg-6">
+<div class="banner-content">
+<h1 class="text-white">All Categories</h1>
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">Category</li>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="category-area pb-110">
+<div class="container">
+
+<div class="category-top box-style">
+<div class="row align-items-center">
+<div class="col-md-6">
+<div class="left-wrapper">
+<div class="sorting">
+<label for="sort">Show items</label>
+<select name="sort" id="sort">
+<option value="0">Popular Items</option>
+<option value="1">By Default</option>
+<option value="2">Newest Items</option>
+</select>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="right-wrapper">
+<ul class="nav product-view-btns" id="myTab" role="tablist">
+<li class="product-view-item" role="presentation">
+<a class="product-view-btn active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="true"><i class="lni lni-list"></i></a>
+</li>
+<li class="product-view-item" role="presentation">
+<a class="product-view-btn" id="grid-tab" data-toggle="tab" href="#grid" role="tab" aria-controls="grid" aria-selected="false"><i class="lni lni-grid-alt"></i></a>
+</li>
+</ul>
+<form action="#">
+<input type="text" name="search" id="search" placeholder="Search">
+<button><i class="lni lni-search-alt"></i></button>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<div class="category-wrapper">
+<div class="row">
+
+<div class="col-lg-8">
+
+<div class="box-style sidebar-category">
+<h3 class="mb-30">All Categories</h3>
+<ul>
+<li><a href="javascript:void(0)"><span>Property & Real Estate</span> <span class="right">12</span></a></li>
+<li><a href="javascript:void(0)"><span>Vehicles</span> <span class="right">20</span></a></li>
+<li><a href="javascript:void(0)"><span>Mobile Phones & Tablets</span> <span class="right">45</span></a></li>
+<li><a href="javascript:void(0)"><span>Electronics</span> <span class="right">87</span></a></li>
+<li><a href="javascript:void(0)"><span>Clothes & Shoes</span> <span class="right">34</span></a></li>
+<li><a href="javascript:void(0)"><span>Home, Furniture & Appliances</span> <span class="right">35</span></a></li>
+<li><a href="javascript:void(0)"><span>Animals & Pets</span> <span class="right">34</span></a></li>
+<li><a href="javascript:void(0)"><span>Jobs</span> <span class="right">34</span></a></li>
+<li><a href="javascript:void(0)"><span>Babies & Kids</span> <span class="right">34</span></a></li>
+<li><a href="javascript:void(0)"><span>Agriculture & Food</span> <span class="right">34</span></a></li>
+<li><a href="javascript:void(0)"><span>Jobs</span> <span class="right">34</span></a></li>
+<li><a href="javascript:void(0)"><span>Service</span> <span class="right">34</span></a></li>
+<li><a href="javascript:void(0)"><span>Commecial equipment & tools</span> <span class="right">34</span></a></li>
+<li><a href="javascript:void(0)"><span>Sports</span> <span class="right">34</span></a></li>
+<li><a href="javascript:void(0)"><span>Art</span> <span class="right">34</span></a></li>
+</ul>
+</div>
+<div class="row">
+
+<div class="col-lg-6 col-md-6">
+<div class="single-product">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-1.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Apple iPhone x</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$120.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-6">
+<div class="single-product">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-2.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Apple MacBook Air</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$420.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-6">
+<div class="single-product">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-3.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Cctv camera</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$80.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-6">
+<div class="single-product">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-4.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Apple's new iMac</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$3000.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-6">
+<div class="single-product">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-5.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Best Compact DSLR</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$290.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-md-6">
+<div class="single-product">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-6.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+ <a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">10 Future Concept Cars</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$4520.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+<div class="row">
+<div class="col-lg-12">
+<div class="single-product list-view">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-1.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Apple iPhone x</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$120.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="single-product list-view">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-2.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Apple MacBook Air</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$420.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="single-product list-view">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-3.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Cctv camera</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$80.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="single-product list-view">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-4.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Apple's new iMac</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$3000.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="single-product list-view">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-5.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">Best Compact DSLR</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$290.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-12">
+<div class="single-product list-view">
+<div class="product-img">
+<a href="product-details.html">
+<img src="assets/images/product/l-product-6.jpg" alt="">
+</a>
+<div class="product-action">
+<a href="javascript:void(0)"><i class="lni lni-heart"></i></a>
+<a href="javascript:void(0)" class="share"><i class="lni lni-share"></i></a>
+</div>
+</div>
+<div class="product-content">
+<h3 class="name"><a href="product-details.html">10 Future Concept Cars</a></h3>
+<span class="update">Last Update: 5 hours ago</span>
+<ul class="address">
+<li>
+<a href="javascript:void(0)"><i class="lni lni-calendar"></i> 20 June, 2023</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-map-marker"></i> Canada</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-user"></i> Stifen Jon</a>
+</li>
+<li>
+<a href="javascript:void(0)"><i class="lni lni-package"></i> Used</a>
+</li>
+</ul>
+<div class="product-bottom">
+<h3 class="price">$4520.99</h3>
+<a href="javascript:void(0)" class="link-ad"><i class="lni lni-checkmark-circle"></i> Verified Ad</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="box-style add-box">
+<h3 class="mb-30">Advertisement</h3>
+<div class="image">
+<a href="javascript:void(0)" class="d-block">
+<img src="assets/images/product/ad-img.jpg" alt="" class="w-100">
+</a>
+</div>
+</div>
+
+<div class="box-style social-box">
+<h3 class="mb-30">Follow Us</h3>
+<ul class="social">
+<li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+<li><a href="javascript:void(0)"><i class="lni lni-twitter-filled"></i></a></li>
+<li><a href="javascript:void(0)"><i class="lni lni-instagram-filled"></i></a></li>
+<li><a href="javascript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}

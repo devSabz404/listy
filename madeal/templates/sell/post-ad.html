@@ -1,0 +1,89 @@
+ {% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+
+<!-- Mirrored from demo.graygrids.com/themes/classilist/post-ad.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Jul 2021 22:19:40 GMT -->
+
+
+
+
+
+<section class="banner-area bg_cover">
+<div class="container">
+<div class="row">
+<div class="col-lg-6">
+<div class="banner-content">
+<h1 class="text-white">Post Ad</h1>
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">Ads</li>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="dashboard-area pb-110">
+<div class="container">
+<div class="row">
+
+<div class="col-xl-9 col-lg-8">
+<div class="post-ad-wrapper box-style">
+<div class="title">
+<h3>Post Ad</h3>
+</div>
+<div class="post-ad-form-wrapper">
+<form  method="post" enctype="multipart/form-data">
+<div class="row">
+<div class="col-xl-7">
+ <div class="left-wrapper pt-50">
+<h5 class="mb-25">Ad Details</h5>
+<div class="single-form mb-15">
+  {% csrf_token %}
+        {{form.as_table}}
+
+
+<div class="single-form mb-15">
+
+<div class="single-form mb-15">
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-5">
+
+<div class="form-check check-style">
+
+<div class="single-form mb-15">
+<label for="phone" class="mb-1">Phone*</label>
+<input type="text" id="phone" name="phone" placeholder="Phone" class="px-3 py-2 mb-0 border rounded">
+</div>
+
+
+<div class="single-form mb-15">
+<div class="form-check check-style">
+<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+<label for="flexCheckDefault4">I agree to all Terms of Use & Posting Rules</label>
+</div>
+</div>
+<button class="main-btn btn-hover">Post Ad</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+{% endblock%}

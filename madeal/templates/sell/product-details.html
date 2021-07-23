@@ -1,0 +1,270 @@
+ {% extends 'base.html' %}
+{% load static %}
+
+{% block content%}
+
+
+
+
+<section class="banner-area bg_cover">
+<div class="container">
+<div class="row">
+<div class="col-lg-6">
+<div class="banner-content">
+<h1 class="text-white">Product Details</h1>
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">Product</li>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="product-details-area">
+<div class="container">
+<div class="product-details-wrapper box-style">
+<div class="info-wrapper">
+<div class="showcase-wrapper">
+<div class="row">
+<div class="order-last col-lg-2 col-xl-2 order-lg-first">
+<div class="nav flex-lg-column nav-pills thumb-img-wrapper" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+<a class="thumb-img active" id="v-pills-tab-1" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">
+<img src="{{advert.image.url}}" alt="">
+</a>
+<a class="thumb-img" id="v-pills-tab-2" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">
+<img src="{{advert.image.url}}" alt="">
+</a>
+<a class="thumb-img" id="v-pills-tab-3" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">
+<img src="{{advert.image.url}}" alt="">
+</a>
+</div>
+</div>
+<div class="col-lg-10 col-xl-10">
+<div class="tab-content" id="v-pills-tabContent">
+<div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-tab-1">
+<div class="showcase-img">
+<img src="{{advert.image.url}}" alt="" width="500px" height="30%" style=" object-fit: cover;">
+</div>
+</div>
+<div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-tab-2">
+<div class="showcase-img">
+<img src="{{advert.image.url}}" alt="">
+</div>
+</div>
+<div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-tab-3">
+<div class="showcase-img">
+<img src="{{advert.image.url}}" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-wrapper">
+<div class="mb-20 meta-top">
+<a href="javascript:void(0)" class="mr-3 date"><i class="mr-2 lni lni-calendar"></i>{{advert.created}}</a>
+<a href="javascript:void(0)" class="address"><i class="mr-2 lni lni-map-marker"></i> {{advert.location}}</a>
+</div>
+<h3 class="title mb-25">iMac Pro 2018 with 256 SSD and 8GB RAM</h3>
+<h4 class="title mb-25">MWk {{advert.price}}</h4>
+<p class="description mb-30">{{advert.description}}
+.</p>
+<h5 class="subtitle">Specification:</h5>
+<div class="specification">
+<ul>
+<li><i class="lni lni-checkmark-circle"></i>256GB PCIe flash storage</li>
+<li><i class="lni lni-checkmark-circle"></i>Turbo Boost up to 3.1GHz Intel</li>
+<li><i class="lni lni-checkmark-circle"></i>10 hour battery life</li>
+<li><i class="lni lni-checkmark-circle"></i>13.3" Retina Display</li>
+</ul>
+<ul>
+<li><i class="lni lni-checkmark-circle"></i>2.7 GHz dual-core Intel Core i5</li>
+<li><i class="lni lni-checkmark-circle"></i>Iris Graphics 6100 8GB memory</li>
+<li><i class="lni lni-checkmark-circle"></i>8GB memory</li>
+<li><i class="lni lni-checkmark-circle"></i>1 Year international warranty</li>
+</ul>
+</div>
+<div class="meta-bottom">
+<ul>
+<li>
+<i class="lni lni-folder"></i> <span>Categories: </span> <a href="javascript:void(0)">{{advert.category}}</a>
+</li>
+<li>
+<i class="lni lni-link"></i> <span>Categories: </span> <a href="javascript:void(0)">Electronics</a>
+</li>
+<li>
+<i class="lni lni-apple"></i> <span>Brand: </span> <a href="javascript:void(0)">Apple</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="review-wrapper">
+<div class="review-header">
+<div class="left-side">
+<h5>5 Reviews</h5>
+</div>
+<div class="right-side">
+<h6>Average Rating <span>4.5</span></h6>
+<div class="rating">
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star"></i>
+</div>
+</div>
+</div>
+<div class="review-body">
+<div class="review-item-wrapper">
+<div class="review-item">
+<div class="image">
+<img src="assets/images/testimonial/testimonial-1.png" alt="">
+</div>
+<div class="media">
+<div class="info">
+<h6>Nichel Smith <span>Review 20 Minits ago</span></h6>
+<div class="rating">
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star"></i>
+<i class="lni lni-star"></i>
+</div>
+</div>
+<p class="mb-30">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+ut labore et dolore magna Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolore.</p>
+<a href="javascript:void(0)" class="reply"><i class="lni lni-reply"></i> Reply</a>
+</div>
+ </div>
+<div class="review-item reply-item pt-35">
+<div class="image">
+<img src="assets/images/testimonial/testimonial-2.png" alt="">
+</div>
+<div class="media">
+<div class="info">
+<h6>John Doe <span>Review 20 Minits ago</span></h6>
+<div class="rating">
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star"></i>
+<i class="lni lni-star"></i>
+</div>
+</div>
+<p class="mb-30">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+ut labore et dolore magna Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+<a href="javascript:void(0)" class="reply"><i class="lni lni-reply"></i> Reply</a>
+</div>
+</div>
+</div>
+<div class="add-review-wrapper">
+<h5 class="mb-20">Add a Review</h5>
+<p class="mb-30">Your email address will not be published. Required fields are marked</p>
+<form action="#" class="review-form">
+<div class="mb-15 form-check">
+<input class="p-0 form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+<label class="form-check-label" for="flexRadioDefault1">
+<span class="rating">
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<span class="ml-2">(234)</span>
+</span>
+</label>
+</div>
+<div class="mb-15 form-check">
+<input class="p-0 form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+<label class="form-check-label" for="flexRadioDefault2">
+<span class="rating">
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star"></i>
+<span class="ml-2">(234)</span>
+</span>
+</label>
+</div>
+<div class="mb-15 form-check">
+<input class="p-0 form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+<label class="form-check-label" for="flexRadioDefault3">
+<span class="rating">
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star"></i>
+<i class="lni lni-star"></i>
+<span class="ml-2">(234)</span>
+</span>
+</label>
+</div>
+<div class="mb-15 form-check">
+<input class="p-0 form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+<label class="form-check-label" for="flexRadioDefault4">
+<span class="rating">
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star"></i>
+<i class="lni lni-star"></i>
+<i class="lni lni-star"></i>
+<span class="ml-2">(234)</span>
+</span>
+</label>
+</div>
+<div class="mb-15 form-check">
+<input class="p-0 form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+<label class="form-check-label" for="flexRadioDefault5">
+<span class="rating">
+<i class="lni lni-star-filled"></i>
+<i class="lni lni-star"></i>
+<i class="lni lni-star"></i>
+<i class="lni lni-star"></i>
+<i class="lni lni-star"></i>
+<span class="ml-2">(234)</span>
+</span>
+</label>
+</div>
+<div class="row mt-30">
+<div class="col-md-6">
+<div class="single-input">
+<label for="name">Your Name</label>
+<input type="text" id="name" name="name" placeholder="John Doe">
+</div>
+</div>
+<div class="col-md-6">
+<div class="single-input">
+<label for="email">Your Email</label>
+<input type="email" id="email" name="email" placeholder="yourmail@gmail.com">
+</div>
+</div>
+<div class="col-md-12">
+<div class="single-input">
+<label for="message">Your Message</label>
+<textarea name="message" id="message" rows="5" placeholder="Type Message"></textarea>
+</div>
+</div>
+<div class="col-md-12">
+<div class="single-input">
+<button class="main-btn btn-hover">Submit Review</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+{% endblock %}
